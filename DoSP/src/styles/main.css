@@ -1,0 +1,96 @@
+@import "tailwindcss";
+
+@import "tailwindcss/preflight";
+@import "tailwindcss/utilities";
+@tailwind utilities;
+
+@font-face {
+    font-family: "Inter";
+    src: url("../assets/fonts/Inter-VariableFont_opsz,wght.ttf")
+        format("truetype");
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Inter";
+    src: url("../assets/fonts/Inter-Italic-VariableFont_opsz,wght.ttf")
+        format("truetype");
+    font-weight: 100 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+@theme {
+    --font-sans: "Inter", sans-serif;
+}
+
+.grid-container {
+    @apply font-sans text-[rgba(250,248,241,1)];
+    @apply grid h-fit auto-rows-auto bg-[rgba(250,248,241,1)];
+    @apply 2xl:grid-cols-12 2xl:gap-x-2 2xl:px-20;
+    @apply max-2xl:grid-cols-12 max-2xl:gap-x-2 max-2xl:px-20;
+    @apply max-sm:grid-cols-8 max-sm:gap-x-1 max-sm:px-2;
+}
+
+.img-filler {
+    @apply sticky top-0 box-border bg-[#D2C1B6] row-start-1 col-span-full;
+    /* @apply 2xl:left-20 2xl:right-20 2xl:h-[300px]; */
+    /* @apply max-2xl:left-20 max-2xl:right-20 max-2xl:h-[300px];
+    @apply max-sm:left-2 max-sm:right-2 max-sm:h-[200px]; */
+    @apply 2xl:h-[300px];
+    @apply max-2xl:h-[300px];
+    @apply max-sm:h-[200px];
+}
+
+.overimg {
+    @apply absolute h-full w-full;
+}
+
+.overimg-content {
+    @apply flex h-full w-full justify-between max-sm:justify-end;
+    @apply 2xl:flex-row;
+    @apply max-2xl:flex-row;
+    @apply max-sm:flex-col;
+}
+
+.overimg-info {
+    @apply inline-flex flex-col gap-2 self-center w-[400px] text-wrap max-sm:w-full;
+}
+.overimg-contacts {
+    @apply self-start mt-6 bg-[rgba(19,36,64,1)] !pr-2 !py-2 !pl-6 max-sm:w-full max-sm:!p-0 max-sm:text-center;
+}
+
+.main-container {
+    @apply grid auto-rows-min h-[1500px];
+    @apply bg-[rgba(250,248,241,1)] col-span-full relative;
+    @apply 2xl:grid-cols-12 2xl:gap-x-2;
+    @apply max-2xl:grid-cols-12 max-2xl:gap-x-2;
+    @apply max-sm:grid-cols-8 max-sm:gap-x-1;
+}
+
+.title-container {
+    @apply grid bg-[rgba(19,36,64,1)] py-2 mt-6 col-span-full h-fit;
+    @apply 2xl:grid-cols-12 2xl:gap-x-2;
+    @apply max-2xl:grid-cols-12 max-2xl:gap-x-2;
+    @apply max-sm:grid-cols-8 max-sm:gap-x-1;
+}
+
+.services-container {
+    @apply grid col-span-full mt-4 text-lg;
+    @apply 2xl:mx-20 2xl:grid-cols-3;
+    @apply max-2xl:px-20 max-2xl:grid-cols-3;
+    @apply max-lg:px-15 max-lg:grid-cols-2;
+    @apply max-md:px-10 max-md:grid-cols-2;
+    @apply max-sm:px-0 max-sm:grid-cols-1 max-sm:col-span-6 max-sm:col-start-2 max-sm:gap-0;
+    @apply gap-4;
+}
+
+.service-item {
+    @apply h-[280px] bg-[#D2C1B6] relative;
+}
+
+.service-item-info {
+    @apply flex justify-between bg-[rgba(19,36,64,1)] !p-2;
+}
