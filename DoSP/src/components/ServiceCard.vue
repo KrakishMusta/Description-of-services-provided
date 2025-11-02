@@ -6,14 +6,14 @@ const props = defineProps<{
 </script>
 
 <template>
-    <div class="service-item">
+    <article class="service-item">
         <div class="absolute w-full h-fit bottom-0">
             <div class="service-item-info">
-                <span>{{ name }}</span>
-                <span>{{ cost }}</span>
+                <h3>{{ name }}</h3>
+                <p>Стоимость: {{ cost }} ₽</p>
             </div>
         </div>
-    </div>
+    </article>
 </template>
 
 <style scoped lang="postcss"></style>
