@@ -1,14 +1,14 @@
+// vite.config.js
 import { fileURLToPath, URL } from "node:url";
-
 import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
 import vueDevTools from "vite-plugin-vue-devtools";
 import tailwindcss from "@tailwindcss/vite";
 import { viteStaticCopy } from "vite-plugin-static-copy";
+import ssr from "vite-plugin-ssr/plugin";
 
-// https://vite.dev/config/
 export default defineConfig({
-    base: "./",
+    base: "/",
     plugins: [
         vue(),
         vueDevTools(),
@@ -19,10 +19,19 @@ export default defineConfig({
                 { src: "sitemap.xml", dest: "" },
             ],
         }),
+        ssr({
+            prerender: true,
+        }),
     ],
     resolve: {
         alias: {
-            "@": fileURLToPath(new URL("./src", import.meta.url)),
+            "#": fileURLToPath(new URL("./src", import.meta.url)),
         },
+    },
+    // ← ДОБАВЬ ЭТО:
+    esbuild: {
+        jsxFactory: "h",
+        jsxFragment: "Fragment",
+        jsxInject: `import { h, Fragment } from 'vue'`,
     },
 });

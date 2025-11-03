@@ -1,5 +1,5 @@
+// src/main.js
 import "./styles/main.css";
-import { createApp } from "vue";
-import App from "./App.vue";
+import { hydrateRoot } from "vite-plugin-ssr/client";
 
-createApp(App).mount("#app");
+hydrateRoot();
