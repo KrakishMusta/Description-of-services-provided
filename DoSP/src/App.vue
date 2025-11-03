@@ -1,32 +1,47 @@
 <script setup>
+import { useHead } from "@unhead/vue";
 import ServiceCard from "./components/ServiceCard.vue";
 
 const mockServices = [
-    {
-        name: "service_1",
-        cost: 1000,
-    },
-    {
-        name: "service_2",
-        cost: 999,
-    },
-    {
-        name: "service_3",
-        cost: 150,
-    },
-    {
-        name: "service_4",
-        cost: 9999,
-    },
-    {
-        name: "service_5",
-        cost: 1000,
-    },
-    {
-        name: "service_6",
-        cost: 1000,
-    },
+    { name: "service_1", cost: 1000 },
+    { name: "service_2", cost: 999 },
+    { name: "service_3", cost: 150 },
+    { name: "service_4", cost: 9999 },
+    { name: "service_5", cost: 1000 },
+    { name: "service_6", cost: 1000 },
 ];
+
+useHead({
+    title: "Прочистка канализации — DoSP",
+    meta: [
+        {
+            name: "description",
+            content: "Аварийная прочистка канализации и КНС в Новокузнецке.",
+        },
+        { property: "og:title", content: "Прочистка канализации — DoSP" },
+        {
+            property: "og:description",
+            content: "Срочная прочистка труб и КНС в Новокузнецке",
+        },
+        { property: "og:type", content: "website" },
+        { property: "og:url", content: "https://bjjolk.ru/" },
+        { property: "og:image", content: "https://bjjolk.ru/og-image.jpg" },
+        { property: "og:locale", content: "ru_RU" },
+        { property: "og:site_name", content: "DoSP — Прочистка канализации" },
+        { name: "twitter:card", content: "summary_large_image" },
+        { name: "twitter:title", content: "Прочистка канализации — DoSP" },
+        {
+            name: "twitter:description",
+            content:
+                "Срочная прочистка канализационных сооружений, труб и КНС в Новокузнецке.",
+        },
+        { name: "twitter:image", content: "https://bjjolk.ru/og-image.jpg" },
+    ],
+    link: [
+        { rel: "canonical", href: "https://bjjolk.ru/" },
+        { rel: "preconnect", href: "https://bjjolk.ru", crossorigin: "" },
+    ],
+});
 </script>
 
 <template>
@@ -75,5 +90,3 @@ const mockServices = [
         </main>
     </div>
 </template>
-
-<style></style>

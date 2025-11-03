@@ -6,7 +6,6 @@ import vueDevTools from "vite-plugin-vue-devtools";
 import tailwindcss from "@tailwindcss/vite";
 import { viteStaticCopy } from "vite-plugin-static-copy";
 
-// https://vite.dev/config/
 export default defineConfig({
     base: "./",
     plugins: [
